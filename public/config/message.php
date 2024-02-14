@@ -71,5 +71,5 @@ Reason: %s'
 
     'accthed_student' => "You have been enrolled by  %s for  %s. Please find the details below",
     
-    'sms_live_class' => "Hello %s, Congratulations on your first virtual Live class session! Download the dancebuzz app and log in with your username and password.Link: link:" .env("SHORT_FRIEND_URL", "https://mykc.in/__6kIg") . ".Queries contact: support@dancebuzz.com. The dancebuzz Team"
+    'sms_live_class' => "Hello %s, Congratulations on your first virtual Live class session! Download the dancebuzz app and log in with your username and password.Link: link:" .env("SHORT_FRIEND_URL", "https://mydb.in/__6kIg") . ".Queries contact: support@dancebuzz.com. The dancebuzz Team"
 ];

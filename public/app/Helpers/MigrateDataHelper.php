@@ -17,7 +17,7 @@ final class MigrateDataHelper
             $jsonData = json_decode($collection->saved_content);
             $urlData = ImageHelper::addImageUrl($jsonData);
             if(!$urlData->isImage and $urlData->featured_image){
-                $data = explode('https://kccms.s3.ap-south-1.amazonaws.com/', $urlData->featured_image);
+                $data = explode('https://dbcms.s3.ap-south-1.amazonaws.com/', $urlData->featured_image);
                 if(count($data) > 1){
                     $basePath = $data[1];
                     $fileName = $basePath.'/800-450.png';
@@ -68,7 +68,7 @@ final class MigrateDataHelper
             $images = self::getImages($jsonData, true);
             if(count($images)){
                 foreach($images as $image){
-                    $data = explode('https://kccms.s3.ap-south-1.amazonaws.com/', $image);
+                    $data = explode('https://dbcms.s3.ap-south-1.amazonaws.com/', $image);
                     if(count($data) > 1){
                         $basePath = $data[1];
                         $fileName = $basePath.'/800-450.png';

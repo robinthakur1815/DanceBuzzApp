@@ -31,11 +31,11 @@ Route::get('/mobile/feed/{title}', 'Mobile\VendorCollectionController@editor');
 Route::post('/payment/notify', 'Mobile\ApiCashFreePaymentController@mobilePaymentNotify');
 
 Route::post('/check/version', 'Api\ApiAppVersionController@appVersion');
-Route::post('/action/version', 'Api\ApiAppVersionController@appUpdateAction')->middleware('auth.kcguest');
+Route::post('/action/version', 'Api\ApiAppVersionController@appUpdateAction')->middleware('auth.dbguest');
 
 Route::post('/vendor/services', 'CollectionController@getVendorServices');
 
-Route::middleware(['auth.kc', 'active'])->get('/user', function (Request $request) {
+Route::middleware(['auth.db', 'active'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
@@ -51,7 +51,7 @@ Route::post('/collection/tags/paginate', 'TagController@getPaginateTags');
 /*
  * Web CMS Collection Data Routes
  */
-Route::group(['prefix' => 'collection', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'collection', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/user/role/testing', 'CollectionController@userRoleTesting');
     Route::post('/all', 'CollectionController@index');
     Route::post('/campaigns/csv', 'CollectionController@CampaignsCsv');
@@ -97,7 +97,7 @@ Route::group(['prefix' => 'collection', 'middleware' => ['auth.kc', 'active']], 
 
 });
 
-Route::group(['prefix' => '/spam/report', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => '/spam/report', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/all', 'SpamReportsController@getSpamListing');
     Route::post('/delete', 'SpamReportsController@deleteSpamReport');
     Route::post('/approve', 'SpamReportsController@approveSpamReport');
@@ -106,7 +106,7 @@ Route::group(['prefix' => '/spam/report', 'middleware' => ['auth.kc', 'active']]
 /*
  * Web CMS Pages and Section Data Routes
  */
-Route::group(['prefix' => 'page', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'page', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/save', 'PageController@savePageDetails');
     Route::get('/{id}/detail', 'PageController@getPageDetails');
     Route::post('/delete', 'PageController@deleteWebPages');
@@ -123,7 +123,7 @@ Route::post('/page/slug/section/detail', 'PageController@SectionSlugDetail');
 /*
  * CMS Products, Price and Discounts Data Routes.
  */
-Route::group(['prefix' => 'product', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'product', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/all', 'ProductController@getAllProducts');
     Route::get('/{id}', 'ProductController@getProductDetails');
     Route::post('/save', 'ProductController@saveProductDetails');
@@ -170,7 +170,7 @@ Route::group(['prefix' => 'product', 'middleware' => ['auth.kc', 'active']], fun
 /*
  * Other CMS data routes
  */
-Route::group(['middleware' => ['auth.kc', 'active']], function () {
+Route::group(['middleware' => ['auth.db', 'active']], function () {
     // Route::post('/cms/media/save', 'MediaController@storeNewCropperMedia');
 
     Route::get('/partner/collection/categories/{type?}', 'CategoryController@getAllCategories');
@@ -265,7 +265,7 @@ Route::group(['middleware' => ['auth.kc', 'active']], function () {
 Route::post('/viewcount/save', 'UserController@saveViewCount');
 Route::get('/viewcount/show/{page_type}', 'UserController@ViewCount');
 
-Route::group(['middleware' => ['auth.kcguest']], function () {
+Route::group(['middleware' => ['auth.dbguest']], function () {
     Route::post('/my/class/sessions', 'Api\Mobile\ApiAuthUserController@liveClassSessions');
 });
 // Route::group(['prefix' => 'page'], function () {
@@ -275,7 +275,7 @@ Route::group(['middleware' => ['auth.kcguest']], function () {
 /*
  * Web Collections Routes
  */
-Route::group(['prefix' => 'web', 'middleware' => ['auth.kcguest']], function () {
+Route::group(['prefix' => 'web', 'middleware' => ['auth.dbguest']], function () {
     Route::get('/page/{slug}', 'WebController@getWebPageDetails');
     Route::get('/collection/all/{type}/{count?}', 'WebController@getCollectionData');
     Route::post('/collection/all/{type}', 'WebController@getFilteredCollections');
@@ -325,7 +325,7 @@ Route::group(['prefix' => 'web', 'middleware' => ['auth.kcguest']], function () 
     Route::get('/check/payment/status/{orderId}', 'ProductController@paymentStatus');
 });
 
-Route::group(['prefix' => 'web', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'web', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/validate/payment', 'ProductController@validatePayment');
     Route::post('/validate/free/payment', 'ProductController@validateFreePayment');
 });
@@ -335,7 +335,7 @@ Route::group(['prefix' => 'web', 'middleware' => ['auth.kc', 'active']], functio
  */
 
 Route::group(['prefix' => 'mobile'], function () {
-    Route::group(['middleware' => ['auth.kcguest']], function () {
+    Route::group(['middleware' => ['auth.dbguest']], function () {
         Route::get('/event/featured/{city?}', 'Mobile\ApiClientWebController@eventListingPage');
         Route::get('/collection/{slug}', 'Mobile\ApiClientWebController@collectionDetailPage');
         Route::post('/collection/filtered/listing', 'Mobile\ApiClientWebController@collectionFilteredListing');
@@ -349,7 +349,7 @@ Route::group(['prefix' => 'mobile'], function () {
     });
 
     //event create partner
-    Route::group(['middleware' => ['auth.kc']], function () {
+    Route::group(['middleware' => ['auth.db']], function () {
         Route::post('/transaction/listing', 'WebOrderController@getAllUserTransactions');
 
         Route::get('/vendor/events/{vendorId}', 'Mobile\VendorCollectionController@index');
@@ -362,7 +362,7 @@ Route::group(['prefix' => 'mobile'], function () {
     });
 
     //tag and category
-    Route::group(['middleware' => ['auth.kc']], function () {
+    Route::group(['middleware' => ['auth.db']], function () {
         Route::post('/collection/category/save', 'CategoryController@saveCategory');
         Route::post('/collection/tag/save', 'TagController@saveTags');
         Route::get('/tags', 'TagController@getAllTags');
@@ -372,7 +372,7 @@ Route::group(['prefix' => 'mobile'], function () {
 /*
  * Reviews to be shown on web end, authenticated from vendor database.
  */
-Route::group(['prefix' => 'review', 'middleware' => ['auth.kcguest']], function () {
+Route::group(['prefix' => 'review', 'middleware' => ['auth.dbguest']], function () {
     Route::post('/submit', 'ReviewController@authSubmitReview');
     Route::post('/product/all', 'ReviewController@getCollectionReviews');
     Route::post('/auth/delete', 'ReviewController@authDeleteReview');
@@ -397,14 +397,14 @@ Route::post('/feed/likes', 'FeedController@getFeedLikeList');
 // Route::post('/feed/likes', 'FeedController@getFeedList');
 
 Route::group(['prefix' => 'feed'], function () {
-    Route::group(['middleware' => ['auth.kcguest']], function () {
+    Route::group(['middleware' => ['auth.dbguest']], function () {
         Route::get('/all', 'FeedController@getAllFeeds');
         Route::get('/comments/listing', 'FeedController@getAllFeedComments');
        
         
     });
 
-    Route::group(['middleware' => ['auth.kc']], function () {
+    Route::group(['middleware' => ['auth.db']], function () {
         Route::post('/save', 'FeedController@saveFeedData');
         Route::post('/listing', 'FeedController@getAllFeeds');
         Route::get('/{id}/details', 'FeedController@getFeedData');
@@ -443,7 +443,7 @@ Route::group(['prefix' => 'vendor'], function () {
     // Route::post('/restore', 'VendorController@restoreVendor');
 });
 
-Route::group(['prefix' => 'school', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'school', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/students/list', 'StudentController@getRegisteredDBKids');
     Route::post('/guardians/list', 'StudentController@getRegisteredGuardians');
     Route::post('/guardians/update', 'StudentController@activateDeactivateGuardians');
@@ -457,7 +457,7 @@ Route::group(['prefix' => 'school', 'middleware' => ['auth.kc', 'active']], func
 });
 
 Route::post('/uploadstory', 'Api\ApiStoryController@importBulkStory');
-Route::group(['prefix' => 'story', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'story', 'middleware' => ['auth.db', 'active']], function () {
     Route::post('/submit', 'Api\ApiStoryController@create');
     Route::post('/validate/student', 'Api\ApiStoryController@validateStory');
     Route::post('/delete/{id}', 'Api\ApiStoryController@deleteStory');
@@ -476,13 +476,13 @@ Route::group(['prefix' => 'story', 'middleware' => ['auth.kc', 'active']], funct
     Route::get('/{id}/details', 'Api\ApiStoryController@cmsStoryShow');
     Route::post('/reject', 'Api\ApiStoryController@rejectedStories');
 });
-Route::group(['prefix' => 'school', 'middleware' => ['auth.kc', 'active']], function () {
+Route::group(['prefix' => 'school', 'middleware' => ['auth.db', 'active']], function () {
 
     Route::post('/story/all', 'Reports\RegistrationReportController@downloadReport');
 
 });
 
-Route::group(['prefix' => 'feedback', 'middleware' => ['auth.kcguest']], function () {
+Route::group(['prefix' => 'feedback', 'middleware' => ['auth.dbguest']], function () {
     Route::post('/submit', 'Api\ApiFeedbackController@create');
     Route::post('/all', 'Api\ApiFeedbackController@index');
     Route::get('/{id}/details', 'Api\ApiFeedbackController@show');
@@ -498,7 +498,7 @@ Route::post('/student/uploadTest', 'Api\ApiStoryController@uploadTest');
 
 
 Route::group(['prefix' => 'dynamic'], function () {
-    Route::group(['middleware' => ['auth.kcguest']], function () {
+    Route::group(['middleware' => ['auth.dbguest']], function () {
         Route::post('/create/feed/url', 'DynamicUrlController@createDynamicUrlForFeed');
         Route::post('/create/campaign/url', 'DynamicUrlController@createDynamicUrlForCampaign');
         Route::post('/create/young-expert/url', 'DynamicUrlController@createDynamicUrlForYoungExperts');

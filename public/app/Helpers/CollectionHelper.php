@@ -44,7 +44,7 @@ final class CollectionHelper
         }
     }
 
-    public static function kcVendorData($user = null)
+    public static function dbVendorData($user = null)
     {
         $data = [
             'vendor_id'   => 0,
@@ -74,7 +74,7 @@ final class CollectionHelper
 
     public static function createClass()
     {
-        $userData = self::kcVendorData();
+        $userData = self::dbVendorData();
         $collections = Collection::whereIn('collection_type', [CollectionType::classes, CollectionType::classDeck])
                                         ->with('product.prices')
                                         ->whereNull('vendor_class_id')->get();
@@ -125,9 +125,9 @@ final class CollectionHelper
             $vendorId = $vendor->id;
             $ownerId = $vendor->created_by;
         } else {
-            $kcVendorData = self::kcVendorData();
-            $vendorId = $kcVendorData['vendor_id'];
-            $ownerId = $kcVendorData['user_id'];
+            $dbVendorData = self::dbVendorData();
+            $vendorId = $dbVendorData['vendor_id'];
+            $ownerId = $dbVendorData['user_id'];
         }
         $package = null;
         if ($productPrice) {
@@ -165,9 +165,9 @@ final class CollectionHelper
             $vendorId = $vendor->id;
             $ownerId = $vendor->created_by;
         } else {
-            $kcVendorData = self::kcVendorData();
-            $vendorId = $kcVendorData['vendor_id'];
-            $ownerId = $kcVendorData['user_id'];
+            $dbVendorData = self::dbVendorData();
+            $vendorId = $dbVendorData['vendor_id'];
+            $ownerId = $dbVendorData['user_id'];
         }
 
         $discount = null;
@@ -217,9 +217,9 @@ final class CollectionHelper
             $vendorId = $vendor->id;
             $ownerId = $vendor->created_by;
         } else {
-            $kcVendorData = self::kcVendorData();
-            $vendorId = $kcVendorData['vendor_id'];
-            $ownerId = $kcVendorData['user_id'];
+            $dbVendorData = self::dbVendorData();
+            $vendorId = $dbVendorData['vendor_id'];
+            $ownerId = $dbVendorData['user_id'];
         }
         $coupon = null;
         if ($cmsCoupon) {

@@ -353,7 +353,7 @@ class CollectionController extends Controller
             // $vendor_id = $request->vendor;
             $location_id = $createdClass['location_id'];
         } elseif ($request->type == CollectionType::classes && !$request->vendor) {
-            $vendorClassData = CollectionHelper::kcVendorData();
+            $vendorClassData = CollectionHelper::dbVendorData();
 
             $datas = [
 

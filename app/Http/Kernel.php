@@ -67,8 +67,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'active' => \App\Http\Middleware\CheckUserActivated::class,
-        'auth.kc' => \App\Http\Middleware\OAuthDB::class,
-        'auth.kcguest' => \App\Http\Middleware\OAuthDBGuest::class,
+        'auth.db' => \App\Http\Middleware\OAuthDB::class,
+        'auth.dbguest' => \App\Http\Middleware\OAuthDBGuest::class,
 
     ];
 }

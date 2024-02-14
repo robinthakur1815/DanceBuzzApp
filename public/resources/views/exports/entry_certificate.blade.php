@@ -65,16 +65,16 @@
                                         
                                     </td>
                                     <td align="center" valign="center">
-                                        Ashish Srivastavas<br/>
-                                        CEO, Bluelupin Technologies
+                                        Robin Thakur<br/>
+                                        CEO, DanceBuzz Technologies
                                     </td>
                                     <td align="center" valign="center">
-                                        Ashish Srivastavas<br/>
-                                        CEO, Bluelupin Technologies
+                                        Robin Thakur<br/>
+                                        CEO, DanceBuzz Technologies
                                     </td>
                                     <td align="center" valign="center">
-                                        Ashish Srivastavas<br/>
-                                        CEO, Bluelupin Technologies
+                                        Robin Thakur<br/>
+                                        CEO, DanceBuzz Technologies
                                     </td>
                                 </tr>
                             </tbody>

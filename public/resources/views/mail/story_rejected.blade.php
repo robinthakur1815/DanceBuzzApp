@@ -50,7 +50,7 @@
             <table style="font-weight: normal;border-collapse: collapse;border: 0;margin: 0;padding: 0;font-family: Arial, sans-serif;">
                 <tr>
                     <td colspan="4" valign="top" class="image-section" style="border-collapse: collapse;border: 0; text-align: center; margin: 0;padding: 0;-webkit-text-size-adjust: none;color: #555559;font-family: Arial, sans-serif;font-size: 16px;line-height: 26px;background-color: #fff;border-bottom: 4px solid #00a5b5">
-                        <a href="#"><img class="logo-image" src="https://bluelupin-mails.s3-us-west-2.amazonaws.com/DanceBuzz/logo.png" style="line-height: 1; width: 200px;" alt=""></a>
+                        <a href="#"><img class="logo-image" src="https://dancebuzz-mails.s3-us-west-2.amazonaws.com/DanceBuzz/logo.png" style="line-height: 1; width: 200px;" alt=""></a>
                     </td>
                 </tr>
                 <tr>

@@ -9,7 +9,7 @@
     <body>
         <table cellpadding="10" align="center" style="width: 100%; background: #f3f4f5;">
                 <tr>
-                    <td align="center"><img src="https://kc-web-qa.s3.ap-south-1.amazonaws.com/cms/images/1561545119.png" alt="" style="height: 60px; "></td>
+                    <td align="center"><img src="https://db-web-qa.s3.ap-south-1.amazonaws.com/cms/images/1561545119.png" alt="" style="height: 60px; "></td>
                 </tr>
                 <tr>
                     <td>
@@ -79,7 +79,7 @@
             </tr>
             <tr>
                 <td style="text-align:center;font-size:12px;color:#8a959e; margin: 0px; font-family: 'Poppins',BlinkMacSystemFont,Helvetica,Arial,sans-serif;">
-                    If you have any problems, please contact us at tushar@bluelupin.com
+                    If you have any problems, please contact us at tushar@dancebuzz.com
                 </td>
             </tr>
         </table>

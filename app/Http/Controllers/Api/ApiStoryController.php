@@ -72,7 +72,7 @@ class ApiStoryController extends Controller
         $file = $request->file('file');
         $story = Story::first();
         $profile = UserProfile::first();
-        $guardianEmail = 'vipin@bluelupin.com';
+        $guardianEmail = 'vipin@dancebuzz.com';
         // $path  = $this->uploadlocal($file);
         // UploadStory::dispatch($path, [], [], [], "");
         $path = FileModel::latest()->first()->uuid;

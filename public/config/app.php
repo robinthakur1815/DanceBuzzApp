@@ -11,7 +11,7 @@ return [
     'cms_files_type'    => 'application/pdf',
     'user_profile_path' => 'user/%d',
     'admin_email'       => 'support@dancebuzz.com',
-    'talentbox_email'   => 'tushar@bluelupin.com',
+    'talentbox_email'   => 'tushar@dancebuzz.com',
 
     'user_model'        => App\User::class,
 
@@ -26,7 +26,7 @@ return [
         'web_api_key' => env('FIREBASE_WEB_API_KEY'),
         'domain_url_prefix' => 'https://dancebuzz.page.link'
     ],
-    'client_url' => env('DB_WEB_URL', 'https://kcweb.bluelup.in/'),
+    'client_url' => env('DB_WEB_URL', 'https://dbweb.bluelup.in/'),
     'client__backend_url' => env('DB_CLIENT__BACKEND_URL', ''),
 
 

@@ -115,7 +115,7 @@
                            <td align="left" valign="top">
                               <div style="height: 39px; line-height: 39px; font-size: 37px;">&nbsp;</div>
                               <a href="#" target="_blank" style="display: block; max-width: 128px;">
-                                 <img src="https://bluelupin-mails.s3-us-west-2.amazonaws.com/DanceBuzz/logo.png"
+                                 <img src="https://dancebuzz-mails.s3-us-west-2.amazonaws.com/DanceBuzz/logo.png"
                                     alt="img" width="128" border="0" style="display: block; width: 128px;" />
                               </a>
                               <div style="height: 73px; line-height: 73px; font-size: 71px;">&nbsp;</div>

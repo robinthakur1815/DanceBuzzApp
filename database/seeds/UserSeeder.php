@@ -15,8 +15,8 @@ class UserSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('users')->truncate();
         DB::table('users')->insert([
-            'name' => 'Ashish',
-            'email' => 'ashish@bluelupin.com',
+            'name' => 'Robin',
+            'email' => 'robin@dancebuzz.com',
             'password' => bcrypt('admin@123'),
             'created_at' => '2019-02-08 06:57:12',
             'updated_at' => '2019-02-13 06:54:12',
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name' => 'Rahul',
-            'email' => 'rahult@bluelupin.com',
+            'email' => 'asif@dancebuzz.com',
             'password' => bcrypt('admin@123'),
             'created_at' => '2019-02-08 06:57:12',
             'updated_at' => '2019-02-13 06:54:12',

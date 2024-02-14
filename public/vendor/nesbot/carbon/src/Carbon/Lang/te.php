@@ -14,7 +14,7 @@
  * - Kunal Marwaha
  * - Josh Soref
  * - François B
- * - kc
+ * - db
  */
 return [
     'year' => ':count సంవత్సరం|:count సంవత్సరాలు',

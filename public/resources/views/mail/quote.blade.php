@@ -9,7 +9,7 @@
 <body>
 
     <div align="center">
-        <img src="https://bluelupin-mails.s3-us-west-2.amazonaws.com/zircon/zircon+logo.png" alt="" style="height: 86px;" class="">
+        <img src="https://dancebuzz-mails.s3-us-west-2.amazonaws.com/zircon/zircon+logo.png" alt="" style="height: 86px;" class="">
         <table cellpadding="12" style="color:#9ca6af;padding: 1%;font-size: 13px;background: #9013fe05; width:600px;    ">
             <tbody>
                 <tr style=" background: #FF4401">
