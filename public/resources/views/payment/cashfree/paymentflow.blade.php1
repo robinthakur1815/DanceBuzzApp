@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>paymentFlow</title>
+</head>
+<body>
+    <form id="redirectForm" method="post" action="https://test.cashfree.com/billpay/checkout/post/submit">
+        <input type="hidden" name="appId" value=""/>
+        <input type="hidden" name="orderId" value="order00001"/>
+        <input type="hidden" name="orderAmount" value="100"/>
+        <input type="hidden" name="orderCurrency" value="INR"/>
+        <input type="hidden" name="orderNote" value="test"/>
+        <input type="hidden" name="customerName" value="John Doe"/>
+        <input type="hidden" name="customerEmail" value="Johndoe@test.com"/>
+        <input type="hidden" name="customerPhone" value="9999999999"/>
+        <input type="hidden" name="returnUrl" value="<RETURN_URL>"/>
+        <input type="hidden" name="notifyUrl" value="<NOTIFY_URL>"/>
+        <input type="hidden" name="signature" value="<GENERATED_SIGNATURE>"/>
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://www.cashfree.com/assets/cashfree.sdk.v1.2.js" type="text/javascript"></script>
+    <script>
+        let uri = "{{route('paymentData', [$id, $payid])}}"
+        function cancelPayment() {
+            window.location.href = "{{route('cancel_cashfree')}}";
+        }
+
+        function displayPaymentForm(data){
+            
+        
+        }
+
+        let fetchData = async ()  => {
+            try {
+                let response = await axios.get(uri)
+                displayPaymentForm(response.data.data)
+            } catch (error) {
+                cancelPayment()
+            }
+        }
+
+        fetchData()
+
+    </script>
+</body>
+</html>
